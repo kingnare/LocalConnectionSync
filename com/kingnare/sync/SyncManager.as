@@ -364,7 +364,7 @@ package com.kingnare.player.mp3.sync
         protected function clientAddedHandler(event:DynamicEvent):void
         {
             var evt:DynamicEvent = new DynamicEvent("info");
-            evt.info = "播放器 "+event.uid+" 进入.";
+            evt.info = "客户端 "+event.uid+" 进入.";
             dispatchEvent(evt);
             
             connServer.send(server.clients[event.uid].connStr, "serverToClient", {type:"command", command:"syncData", value:AudioSyncData.getInstance()});
@@ -378,7 +378,7 @@ package com.kingnare.player.mp3.sync
         protected function clientRemovedHandler(event:DynamicEvent):void
         {
             var evt:DynamicEvent = new DynamicEvent("info");
-            evt.info = "播放器 "+event.uid+" 退出.";
+            evt.info = "客户端 "+event.uid+" 退出.";
             dispatchEvent(evt);
         }
         
